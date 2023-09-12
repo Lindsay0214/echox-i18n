@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Language = () => {
     const navigate = useNavigate();
-    const { i18n } = useTranslation();
-    const [dropdownLanguage, setDropdownLanguage] = React.useState(i18n.language || 'zh_TW');
+    const { t, i18n } = useTranslation();
+    const [dropdownLanguage, setDropdownLanguage] = React.useState(i18n.language || 'zh-tw');
 
     const languageHandler = (event: React.ChangeEvent<any>) => {
         const newLanguage = event.target.value;
@@ -21,8 +21,8 @@ const Language = () => {
         <FormControl style={{ width: "200px" }}>
             <InputLabel id="select-label">Language</InputLabel>
             <Select labelId="select-label" id="select" value={dropdownLanguage} onChange={languageHandler}>
-                <MenuItem value="zh-TW">繁體中文</MenuItem>
-                <MenuItem value="zh-CN">简体中文</MenuItem>
+                <MenuItem value="zh-tw">繁體中文</MenuItem>
+                <MenuItem value="zh-cn">简体中文</MenuItem>
             </Select>
         </FormControl>
     );

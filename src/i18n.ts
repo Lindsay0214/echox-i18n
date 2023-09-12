@@ -8,14 +8,11 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        preload: ['zh_TW'],
-        load: 'languageOnly',
-        fallbackLng: "zh_TW",
-        debug: true,
-        detection: {
-            order: ['path', 'localStorage']
+        backend: {
+            loadPath: "/locales/{{lng}}/{{ns}}.json"
         },
-        whitelist: ['zh_TW', 'zh_CN']
+        fallbackLng: "zh-cn",
+        lng: "zh-cn",
     });
 
 export default i18n;
